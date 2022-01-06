@@ -2,8 +2,6 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import { query, collection, where, getFirestore, getDocs, limit } from 'firebase/firestore';
 
-
-
 const firebaseConfig = {
   apiKey: "AIzaSyAY-ONJ14CpitYenWWi5d0xy6HPiTUTYXQ",
   authDomain: "jb-react.firebaseapp.com",
@@ -13,12 +11,15 @@ const firebaseConfig = {
   appId: "1:772965123821:web:0306b373d328877cfdeee4",
   measurementId: "G-EB19EW2FX0"
 };
+
 firebase.initializeApp(firebaseConfig);
 export const firestore = firebase.firestore();
+
 const db = getFirestore();
-export const getSiteData = async () => {
+
+export const getSiteData = async (lang) => {
     const collec = collection(db, 'sitedata/pages/home');
-    const dd = query(collec, where("lang", "==", "sp"), limit(1));
+    const dd = query(collec, where("lang", "==", lang), limit(1));
     const snap = await getDocs(dd);
     return snap.docs[0].data();
 }
