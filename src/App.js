@@ -3,11 +3,12 @@ import './App.css';
 import { getSiteData } from './firebase/firebase.utils';
 import { setPageData } from './redux/page/page.actions';
 import { connect } from 'react-redux';
+import Header from './components/header.component';
 
 
 class App extends React.Component {
   componentDidMount() {
-    const {setPageData} = this.props;
+    const { setPageData } = this.props;
 
     getSiteData('en').then (
       (data) => setPageData(data),
@@ -17,12 +18,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='display-1 text-center m-5'>
+      <div >
+        <Header />
         <button className='btn btn-primary' value={'en'} onClick={() => this.changeLang('en')}>ENGLISH</button>
         <button className='btn btn-primary' value={'sp'} onClick={() => this.changeLang('sp')}>SPANISH</button>
-        <div>
-          {this.props.pageData.data}
-        </div>
+        
       </div>
     )
   }

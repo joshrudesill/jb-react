@@ -1,7 +1,7 @@
 import { PageActionTypes } from "./page.types";
 
 const INITIAL_STATE = {
-    pageData: {data: null}
+    pageData: {data: {header: {phoneNumber: null}}}
 }
 
 const pageReducer = (state = INITIAL_STATE, action) => {

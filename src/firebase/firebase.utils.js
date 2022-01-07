@@ -18,7 +18,7 @@ export const firestore = firebase.firestore();
 const db = getFirestore();
 
 export const getSiteData = async (lang) => {
-    const collec = collection(db, 'sitedata/pages/home');
+    const collec = collection(db, 'sitedata');
     const dd = query(collec, where("lang", "==", lang), limit(1));
     const snap = await getDocs(dd);
     return snap.docs[0].data();
