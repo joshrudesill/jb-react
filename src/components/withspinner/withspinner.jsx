@@ -1,17 +1,15 @@
 import React from "react";
 
 
-const WithSpinner = WrappedComponent => ({ isLoading, shouldLoad, ...otherProps}) => {
-    if (isLoading && shouldLoad) {
+const WithSpinner = WrappedComponent => ({ isLoading, ...otherProps}) => {
+    if (isLoading) {
         return (
-        <div className='SpinnerOverlay'>
-            <div className='SpinnerContainer' />
+        <div>
+            ASDFASDFASDF
         </div>
         )
     }
-    if (isLoading && !shouldLoad) {
-        return (<div/>)
-    }
+    
     
     return (<WrappedComponent {...otherProps}/>)
     

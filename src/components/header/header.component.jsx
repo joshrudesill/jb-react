@@ -1,18 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-
-const Header = ({ pageData }) => (
+import { createStructuredSelector } from "reselect";
+import { selectHeader } from "../../redux/page/page.selectors";
+const Header = ({pageData}) => (
     <nav className="navbar bg-dark justify-content-between">
         <div className="text-white mx-3">
             <span>
                 <i className="bi bi-telephone" style={{color: 'white'}}></i>
-                {
-                    pageData.header.phoneNumber
-                }
-                {
-                    pageData.header.headerName
-                }
-
+                {pageData.phoneNumber}
+                {pageData.headerName}
              </span>
         </div>
         
@@ -29,8 +25,8 @@ const Header = ({ pageData }) => (
     </nav>
 );
 
-const mapStateToProps = ({ page }) => ({
-    pageData: page.pageData.data
-  });
+const mapStateToProps = createStructuredSelector ({
+    pageData: selectHeader
+});
 
 export default connect(mapStateToProps)(Header);

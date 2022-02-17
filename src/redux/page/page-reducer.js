@@ -1,9 +1,11 @@
-import { PageActionTypes } from "./page.types";
+import { ENG } from "../../constants";
+import PageActionTypes from "./page.types";
 
 const INITIAL_STATE = {
     pageData: null,
     isFetching: false,
-    errorMessage: undefined
+    errorMessage: undefined,
+    lang: ENG
 }
 
 const pageReducer = (state = INITIAL_STATE, action) => {

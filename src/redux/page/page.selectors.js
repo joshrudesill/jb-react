@@ -1,23 +1,18 @@
-import { createSelector, reselect } from 'reselect';
+import { createSelector } from 'reselect';
 
-const selectPageData = state => state.pageData;
+const selectPageData = state => state.page;
 
 export const selectData = createSelector(
     [selectPageData],
-    pageData => pageData.data
+    page => page.pageData
 );
 
 export const selectHeader = createSelector(
     [selectData],
-    data => data.header
+    dataS => dataS ? dataS.header : null
 );
 
-export const isPageFetching = createSelector(
-    [selectPageData],
-    pageData => pageData.isFetching
-);
-
-export const selectIsPageLoaded = createSelector(
-    [selectPageData],
-    pageData => !!pageData.data
+export const selectIsPageFetched = createSelector(
+    [selectData],
+    pageData => !!pageData
 );
