@@ -1,16 +1,31 @@
 import { PageActionTypes } from "./page.types";
 
 const INITIAL_STATE = {
-    pageData: {data: {header: {phoneNumber: null}}}
+    pageData: null,
+    isFetching: false,
+    errorMessage: undefined
 }
 
 const pageReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case PageActionTypes.SET_PAGE_DATA:
+        case PageActionTypes.FETCH_PAGE_START:
             return {
                 ...state,
+                isFetching: true
+            }
+        case PageActionTypes.FETCH_PAGE_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
                 pageData: action.payload
             }
+        case PageActionTypes.FETCH_PAGE_FAILURE:
+            return {
+                ...state,
+                isFetching: false,
+                errorMessage: action.payload
+            }
+            
         default:
             return state;
     }

@@ -7,7 +7,10 @@ const Header = ({ pageData }) => (
             <span>
                 <i className="bi bi-telephone" style={{color: 'white'}}></i>
                 {
-                pageData.header.phoneNumber
+                    pageData.header.phoneNumber
+                }
+                {
+                    pageData.header.headerName
                 }
 
              </span>
@@ -15,7 +18,7 @@ const Header = ({ pageData }) => (
         
         
         <div className="mx-3">
-            <a href="https://instagram.com/jara_s_beauty?utm_medium=copy_link"target="_blank">
+            <a href="https://instagram.com/jara_s_beauty?utm_medium=copy_link">
                 <i className="bi bi-instagram mx-1" style={{fontSize: '1.5rem', color: 'white'}}></i>
             </a>
 

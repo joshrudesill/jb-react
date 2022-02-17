@@ -3,16 +3,16 @@ import './App.css';
 import { getSiteData } from './firebase/firebase.utils';
 import { setPageData } from './redux/page/page.actions';
 import { connect } from 'react-redux';
-import Header from './components/header.component';
-
+import Header from './components/header/header.component';
+import { ENG, SP } from './constants';
 
 class App extends React.Component {
   componentDidMount() {
     const { setPageData } = this.props;
 
-    getSiteData('en').then (
-      (data) => setPageData(data),
-        (err) => console.log(err)
+    getSiteData(ENG).then (
+        data => setPageData(data),
+        err => console.log(err)
       );
   }
 
@@ -20,8 +20,8 @@ class App extends React.Component {
     return (
       <div >
         <Header />
-        <button className='btn btn-primary' value={'en'} onClick={() => this.changeLang('en')}>ENGLISH</button>
-        <button className='btn btn-primary' value={'sp'} onClick={() => this.changeLang('sp')}>SPANISH</button>
+        <button className='btn btn-primary' value={ENG} onClick={() => this.changeLang(ENG)}>ENGLISH</button>
+        <button className='btn btn-primary' value={SP} onClick={() => this.changeLang(SP)}>SPANISH</button>
         
       </div>
     )
@@ -43,7 +43,7 @@ const mapStateToProps = ({ page }) => ({
 
 const mapDispatchToProps = dispatch => ({
   setPageData: data => dispatch(setPageData(data))
-})
+});
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

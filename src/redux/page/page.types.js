@@ -1,3 +1,7 @@
-export const PageActionTypes = {
-    SET_PAGE_DATA: 'SET_PAGE_DATA'
+const PageActionTypes  = {
+    FETCH_PAGE_START: 'FETCH_PAGE_START',
+    FETCH_PAGE_SUCCESS: 'FETCH_PAGE_SUCCESS',
+    FETCH_PAGE_FAILURE: 'FETCH_PAGE_FAILURE'
 };
+
+export default PageActionTypes;
