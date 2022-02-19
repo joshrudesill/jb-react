@@ -20,6 +20,17 @@ export const fetchPageFailure = errorMessage => ({
     payload: errorMessage
 });
 
+export const languageChange = lang => ({
+    type: PageActionTypes.CHANGE_LANGUAGE,
+    payload: lang
+});
+
+
+
+
+
+// --- Thunks ---
+
 export const updatePageLang = (lang) => {
     return dispatch => {
         dispatch(fetchPageStartAsync(lang));
@@ -31,6 +42,7 @@ export const fetchPageStartAsync = lang => {
         dispatch(fetchPageStart);
         collectionRef.get().then(snapshot => {
             dispatch(fetchPageSuccess(snapshot.docs[0].data()));
+            dispatch(languageChange(lang));
         }).catch(error => dispatch(fetchPageFailure(error)));
     }
 }

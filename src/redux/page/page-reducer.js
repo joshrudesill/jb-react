@@ -19,13 +19,18 @@ const pageReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 isFetching: false,
-                pageData: action.payload
+                pageData: action.payload,
             }
         case PageActionTypes.FETCH_PAGE_FAILURE:
             return {
                 ...state,
                 isFetching: false,
                 errorMessage: action.payload
+            }
+        case PageActionTypes.CHANGE_LANGUAGE:
+            return {
+                ...state,
+                lang: action.payload,
             }
             
         default:

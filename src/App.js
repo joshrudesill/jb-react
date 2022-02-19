@@ -2,13 +2,15 @@ import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import Header from './components/header/header.component';
-import { ENG, SP } from './constants';
+import { ENG } from './constants';
 import { fetchPageStartAsync, updatePageLang } from '../src/redux/page/page.actions'
 import { createStructuredSelector } from 'reselect';
-import { selectHeader, selectIsPageFetched } from './redux/page/page.selectors';
+import { selectIsPageFetched } from './redux/page/page.selectors';
 import WithSpinner from './components/withspinner/withspinner';
+import LargeNavBar from './components/navbar/navbar-large';
 
 const HeaderWS = WithSpinner(Header);
+const LargeNavBarWS = WithSpinner(LargeNavBar);
 
 class App extends React.Component {
   componentDidMount() {
@@ -18,26 +20,26 @@ class App extends React.Component {
   
 
   render() {
-    const { isLoaded, updatePageLang } = this.props;
+    const { isLoaded } = this.props;
     return (
-      <div >
+      <div>
         <HeaderWS isLoading={!isLoaded} />
-        <button className='btn btn-primary' value={ENG} onClick={() => updatePageLang(ENG)} >ENGLISH</button>
-        <button className='btn btn-primary' value={SP} onClick={() => updatePageLang(SP)}>SPANISH</button>
+        <LargeNavBarWS isLoading={!isLoaded} />
       </div>
+        
     )
   }
 }
 
 
-const mapStateToProps = createStructuredSelector({
+const mapState = createStructuredSelector({
   isLoaded: selectIsPageFetched
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatch = dispatch => ({
   fetchPageStartAsync: lang => dispatch(fetchPageStartAsync(lang)),
   updatePageLang: lang => dispatch(updatePageLang(lang))
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapState, mapDispatch)(App);

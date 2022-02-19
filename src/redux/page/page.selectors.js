@@ -9,10 +9,25 @@ export const selectData = createSelector(
 
 export const selectHeader = createSelector(
     [selectData],
-    dataS => dataS ? dataS.header : null
+    data => data ? data.header : null
+);
+
+export const selectNavBar = createSelector(
+    [selectData],
+    data => data ? data.navbar.navlinks : null
+);
+
+export const selectLanguage = createSelector(
+    [selectData],
+    data => data.lang
 );
 
 export const selectIsPageFetched = createSelector(
     [selectData],
     pageData => !!pageData
+);
+
+export const selectLinks = createSelector(
+    [selectData],
+    data => data ? data.links : null
 );

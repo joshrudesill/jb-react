@@ -1,23 +1,44 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectHeader } from "../../redux/page/page.selectors";
-const Header = ({pageData}) => (
+import { selectHeader, selectLanguage, selectLinks } from "../../redux/page/page.selectors";
+import { ENG, SP } from '../../constants';
+import { updatePageLang } from "../../redux/page/page.actions";
+
+const Header = ({ pageData, updatePageLang, currentLanguage, links }) => (
     <nav className="navbar bg-dark justify-content-between">
         <div className="text-white mx-3">
             <span>
                 <i className="bi bi-telephone" style={{color: 'white'}}></i>
-                {pageData.phoneNumber}
-                {pageData.headerName}
+                 {pageData.phoneNumber}
+                 {pageData.headerName}
              </span>
         </div>
         
-        
+        <div className="text-white">
+            <span className="d-flex">
+                <div className="me-1" 
+                    onClick={() => {
+                        if (currentLanguage === SP) { 
+                            updatePageLang(ENG) 
+                        }
+                    }} 
+                    style={{cursor: 'pointer', textDecoration: `${currentLanguage === ENG ? 'underline' : 'none'}`}}>EN</div>
+                <div>|</div>
+                <div className="ms-1" 
+                    onClick={() => {
+                        if (currentLanguage === ENG) {
+                            updatePageLang(SP) 
+                            }
+                        }} 
+                    style={{cursor: 'pointer', textDecoration: `${currentLanguage === SP ? 'underline' : 'none'}`}}>ES</div>
+            </span>
+            
+        </div>
         <div className="mx-3">
-            <a href="https://instagram.com/jara_s_beauty?utm_medium=copy_link">
+            <a href={links.instagram}>
                 <i className="bi bi-instagram mx-1" style={{fontSize: '1.5rem', color: 'white'}}></i>
             </a>
-
             <i className="bi bi-facebook mx-1" style={{fontSize: '1.5rem', color: 'white'}}></i>
             <i className="bi bi-twitter mx-1" style={{fontSize: '1.5rem', color: 'white'}}></i>
 
@@ -25,8 +46,14 @@ const Header = ({pageData}) => (
     </nav>
 );
 
-const mapStateToProps = createStructuredSelector ({
-    pageData: selectHeader
+const mapState = createStructuredSelector({
+    pageData: selectHeader,
+    links: selectLinks,
+    currentLanguage: selectLanguage
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatch = dispatch => ({
+    updatePageLang: lang => dispatch(updatePageLang(lang))
+  });
+
+export default connect(mapState, mapDispatch)(Header);
