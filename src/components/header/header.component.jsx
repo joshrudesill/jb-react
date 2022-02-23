@@ -11,7 +11,6 @@ const Header = ({ pageData, updatePageLang, currentLanguage, links }) => (
             <span>
                 <i className="bi bi-telephone" style={{color: 'white'}}></i>
                  {pageData.phoneNumber}
-                 {pageData.headerName}
              </span>
         </div>
         

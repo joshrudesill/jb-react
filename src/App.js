@@ -3,11 +3,13 @@ import './App.css';
 import { connect } from 'react-redux';
 import Header from './components/header/header.component';
 import { ENG } from './constants';
-import { fetchPageStartAsync, updatePageLang } from '../src/redux/page/page.actions'
+import { fetchPageStartAsync } from '../src/redux/page/page.actions'
 import { createStructuredSelector } from 'reselect';
 import { selectIsPageFetched } from './redux/page/page.selectors';
 import WithSpinner from './components/withspinner/withspinner';
 import LargeNavBar from './components/navbar/navbar-large';
+import Carousel from './components/carousel/carousel';
+import TopBody from './components/top-body/top-body';
 
 const HeaderWS = WithSpinner(Header);
 const LargeNavBarWS = WithSpinner(LargeNavBar);
@@ -22,11 +24,11 @@ class App extends React.Component {
   render() {
     const { isLoaded } = this.props;
     return (
-      <div>
+      <TopBody>
         <HeaderWS isLoading={!isLoaded} />
         <LargeNavBarWS isLoading={!isLoaded} />
-      </div>
-        
+        <Carousel srcs={[{src: 'assets/interior1.jpg', active: true},{src: 'assets/salong3.jpg', active: false},{src: 'assets/salong5.jpg', active: false}]} />
+      </TopBody>
     )
   }
 }
@@ -37,8 +39,7 @@ const mapState = createStructuredSelector({
 });
 
 const mapDispatch = dispatch => ({
-  fetchPageStartAsync: lang => dispatch(fetchPageStartAsync(lang)),
-  updatePageLang: lang => dispatch(updatePageLang(lang))
+  fetchPageStartAsync: lang => dispatch(fetchPageStartAsync(lang))
 });
 
 
