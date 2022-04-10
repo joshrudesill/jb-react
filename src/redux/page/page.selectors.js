@@ -31,3 +31,13 @@ export const selectLinks = createSelector(
     [selectData],
     data => data ? data.links : null
 );
+
+export const selectProductCards = createSelector(
+    [selectData],
+    data => data ? data.productcards : null
+);
+
+export const selectProductCardsTitle = createSelector(
+    [selectProductCards],
+    pc => pc ?  {toptext: pc.toptext, subtext: pc.subtext} : null
+);

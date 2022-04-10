@@ -13,7 +13,7 @@ const NavBarList = ({ titles, children }) => (
         </ul>
         {children}
         <ul className="navbar-nav d-none d-sm-flex">
-         
+        
             <NavBarListItem  title={titles.services} start={false}/>
             <NavBarListItem  title={titles.contact} start={false}/>
     
@@ -21,7 +21,5 @@ const NavBarList = ({ titles, children }) => (
     </div>
     
 );
-
-
 
 export default NavBarList;

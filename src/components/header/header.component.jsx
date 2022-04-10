@@ -35,6 +35,7 @@ const Header = ({ pageData, updatePageLang, currentLanguage, links }) => (
             
         </div>
         <div className="mx-3">
+            
             <a href={links.instagram}>
                 <i className="bi bi-instagram mx-1" style={{fontSize: '1.5rem', color: 'white'}}></i>
             </a>
