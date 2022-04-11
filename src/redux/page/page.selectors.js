@@ -7,32 +7,44 @@ export const selectData = createSelector(
   (page) => page.pageData
 );
 
-export const selectHeader = createSelector([selectData], (data) =>
-  data ? data.header : null
-);
-
-export const selectNavBar = createSelector([selectData], (data) =>
-  data ? data.navbar.navlinks : null
-);
-
-export const selectLanguage = createSelector([selectData], (data) => data.lang);
+export const selectLanguage = createSelector(
+  [selectData], (data) => data.lang);
 
 export const selectIsPageFetched = createSelector(
   [selectData],
   (pageData) => !!pageData
 );
 
-export const selectLinks = createSelector([selectData], (data) =>
+// Header
+
+export const selectHeader = createSelector(
+  [selectData], (data) =>
+  data ? data.header : null
+);
+
+// Nav Bar
+
+export const selectNavBar = createSelector(
+  [selectData], (data) =>
+  data ? data.navbar.navlinks : null
+);
+
+// Links
+
+export const selectLinks = createSelector(
+  [selectData], (data) =>
   data ? data.links : null
 );
 
-export const selectProductCards = createSelector([selectData], (data) =>
+// Cards
+
+export const selectProductCards = createSelector(
+  [selectData], (data) =>
   data ? data.productcards : null
 );
 
 export const selectProductCardsTitle = createSelector(
-  [selectProductCards],
-  (pc) =>
+  [selectProductCards], (pc) =>
     pc
       ? {
           toptext: pc.toptext,
@@ -46,4 +58,25 @@ export const selectProductCardsTitle = createSelector(
 export const selectProductCardsData = createSelector(
   [selectProductCards],
   (pc) => (pc ? pc.cards : null)
+);
+
+// Services
+
+export const selectServices = createSelector(
+  [selectData], (data) =>
+  data ? data.services : null
+);
+
+export const selectServicesTitles = createSelector(
+  [selectServices], s => 
+  s ? {
+      title: s.title,
+      subtitle: s.subtitle
+    }
+  : null
+);
+
+export const selectServiceSections = createSelector(
+  [selectServices], s =>
+  s ? s.services : null
 );
