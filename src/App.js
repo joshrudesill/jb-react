@@ -48,8 +48,8 @@ const mapState = createStructuredSelector({
   isLoaded: selectIsPageFetched
 });
 
-const mapDispatch = (dispatch) => ({
-  fetchPageStartAsync: (lang) => dispatch(fetchPageStartAsync(lang))
+const mapDispatch = dispatch => ({
+  fetchPageStartAsync: lang => dispatch(fetchPageStartAsync(lang))
 });
 
 export default connect(mapState, mapDispatch)(App);

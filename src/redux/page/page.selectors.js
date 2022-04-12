@@ -80,3 +80,22 @@ export const selectServiceSections = createSelector(
   [selectServices], s =>
   s ? s.services : null
 );
+
+export const selectServiceTreatments = createSelector(
+  [selectServices], s =>
+  s ? s.treatments : null
+);
+
+export const selectTreatmentTitles = createSelector(
+  [selectServiceTreatments], st =>
+  st ? {
+    title: st.title,
+    subtitle: st.subtitle
+  } 
+  : null
+);
+
+export const selectTreatments = createSelector(
+  [selectServiceTreatments], t =>
+  t ? t.names : null
+);

@@ -1,6 +1,6 @@
-const TextTitle = ({ text, extraStyle, ...otherProps }) => (
+const TextTitle = ({ text, extraStyle, children, ...otherProps }) => (
   <div className={extraStyle} {...otherProps}>
-    {text}
+    {text}{children}
   </div>
 );
 
