@@ -24,7 +24,7 @@ const ServicesSection = ({ titles: { title, subtitle }, sections, treatmentTitle
         sections.map(section => <ServiceSubsection {...section} />)
       }
       <hr className="d-md-none"/>
-      <div className="display-5 text-center m-5 p-2 rounded-3 ">
+      <div className="display-5 text-center mt-5 mb-3 p-2 rounded-3 ">
         <TextTitle
           extraStyle="col-8 col-md-4 mx-auto p-1"
           text={treatmentTitles.title}
@@ -38,8 +38,26 @@ const ServicesSection = ({ titles: { title, subtitle }, sections, treatmentTitle
         />
       </div>
       {
-        treatments.map(treatment => <Treatment {...treatment}/>)
+        treatments.map(treatment => <Treatment key={treatment.title} {...treatment}/>)
       }
+    <hr/>
+      <div class="display-5 text-center m-5 mb-2 p-2 rounded-3 ">
+        <TextTitle
+          extraStyle='col-10 col-md-8 mx-auto rounded-pill p-1 eng'
+          text='Hair Extensions '
+          >
+            <i class="bi bi-rainbow" style={{color: 'red'}}></i>
+        </TextTitle>
+        <TextTitle 
+          extraStyle='fs-3 text-muted'
+          text='Add volume and length to your hair with the best hair extensions made entirely of natural and ethical hair from Great Lengths'
+          />
+        <TextTitle 
+          extraStyle='fs-5 text-muted mt-2'
+          text='Pricing varies'
+          />
+          
+      </div>
     </div>
   </section>
 );
