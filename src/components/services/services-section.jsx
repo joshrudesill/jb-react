@@ -21,6 +21,9 @@ const ServicesSection = ({ titles: { title, subtitle }, sections, treatmentTitle
         />
       </Wrapper>
       {
+        treatments.map(treatment => <Treatment key={treatment.title} {...treatment}/>)
+      }
+      {
         sections.map(section => <ServiceSubsection {...section} />)
       }
       <hr className="d-md-none"/>
@@ -37,9 +40,7 @@ const ServicesSection = ({ titles: { title, subtitle }, sections, treatmentTitle
           text={treatmentTitles.subtitle}
         />
       </div>
-      {
-        treatments.map(treatment => <Treatment key={treatment.title} {...treatment}/>)
-      }
+      
     <hr/>
       <div class="display-5 text-center m-5 mb-2 p-2 rounded-3 ">
         <TextTitle
