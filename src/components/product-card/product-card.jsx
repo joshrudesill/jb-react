@@ -1,10 +1,10 @@
 const ProductCard = ({ title, desc, price, asset }) => (
-  <div classNameName="col">
+  <div className="col">
     <div className="mx-auto card h-100" style={{ maxWidth: "95%" }}>
       <img
         src={asset}
         className="card-img-top"
-        style={{ height: "17rem", objectFit: "cover" }}
+        style={{ height: "17rem", objectFit: "cover", objectPosition: "50% 0%" }}
         alt=""
       ></img>
       <div className="card-body shadow shadow-sm">

@@ -1,22 +1,26 @@
 
 
 import NavBarListItem from "../navbar-listitem/navbar-listitem";
-
+import { Link } from 'react-router-dom';
 
 const NavBarList = ({ titles, children }) => (
     <div className="container-fluid justify-content-sm-center justify-content-between">
        <ul className="navbar-nav d-none d-sm-flex">
-         
-            <NavBarListItem href='home' title={titles.home} start={true}/>
-            <NavBarListItem href='about' title={titles.about} start={true}/>
-        
+            {titles[0] === 'Home' || 'Inicio' ? (
+            <Link to='/'>
+                <NavBarListItem title={titles[0]} start={true}/>
+            </Link>
+                ) : 
+                <NavBarListItem href={'#' + titles[0].toLowerCase()} title={titles[0]} start={true}/>
+                }
+                
+            
         </ul>
         {children}
         <ul className="navbar-nav d-none d-sm-flex">
-        
-            <NavBarListItem href='services' title={titles.services} start={false}/>
-            <NavBarListItem href='contact' title={titles.contact} start={false}/>
-    
+            <Link to={'/' + titles[1].toLowerCase()}>
+                <NavBarListItem href={titles[1]} title={titles[1]} start={false}/>
+            </Link>
         </ul> 
     </div>
     

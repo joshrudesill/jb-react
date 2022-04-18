@@ -1,16 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectNavBar } from "../../redux/page/page.selectors";
+import { selectNav } from "../../redux/page/page.selectors";
 import NavBarList from "../navbar-list/navbar-list";
 import ImageLink from "../image-link/image-link";
 
-const LargeNavBar = ({ pageData }) => (
+const LargeNavBar = ({ pageData, page }) => (
     <nav className="navbar navbar-light navbar-expand-sm c2">
-        
-            <NavBarList titles={pageData}>
+           <NavBarList titles={page === 'home' ? [pageData[0], pageData[1]] : [pageData[2], pageData[1]]}>
                 <ImageLink 
-                    href={'#'} 
+                    href={'/'} 
                     classString={'navbar-brand p-1'} 
                     imgId={'logo'}
                     src={'assets/Asset18.png'}
@@ -23,7 +22,7 @@ const LargeNavBar = ({ pageData }) => (
 );
 
 const mapState = createStructuredSelector({
-    pageData: selectNavBar
+    pageData: selectNav
 });
 
 export default connect(mapState)(LargeNavBar);

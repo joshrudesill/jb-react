@@ -24,10 +24,17 @@ export const selectHeader = createSelector(
 
 // Nav Bar
 
+//dep
 export const selectNavBar = createSelector(
   [selectData], (data) =>
   data ? data.navbar.navlinks : null
 );
+
+export const selectNav = createSelector(
+  [selectData], (data) =>
+  data ? data.navbar.navs : null
+);
+
 
 // Links
 

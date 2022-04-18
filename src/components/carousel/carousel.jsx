@@ -1,7 +1,7 @@
 import CarouselItem from "./carousel-item";
 
 const Carousel = ({ srcs }) => (
-    <div className="container">
+    <div className="container mb-5">
       <div id="pageTopCarousel" className="mx-md-5 carousel carousel-dark slide mt-3" data-bs-ride="carousel">
         <div className="carousel-inner">
           
