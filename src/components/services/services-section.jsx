@@ -28,7 +28,7 @@ const ServicesSection = ({ titles: { title, subtitle }, sections, treatmentTitle
           <i class="bi bi-droplet"></i>
         </TextTitle>
 
-        <TextTitle 
+        <TextTitle
           extraStyle='fs-5 text-muted'
           text={treatmentTitles.subtitle}
         />
