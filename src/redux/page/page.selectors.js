@@ -106,3 +106,18 @@ export const selectTreatments = createSelector(
   [selectServiceTreatments], t =>
   t ? t.names : null
 );
+
+// Contact Page
+
+export const selectContact = createSelector(
+  [selectData], (data) =>
+  data ? data.contact : null
+);
+
+// Schedule
+
+export const selectSchedule = createSelector(
+  [selectContact], c =>
+  c ? c.schedule : null
+);
+
