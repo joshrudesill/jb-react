@@ -121,3 +121,13 @@ export const selectSchedule = createSelector(
   c ? c.schedule : null
 );
 
+export const selectTimezone = createSelector(
+  [selectContact], c =>
+  c ? c.timezone : null
+);
+
+export const selectAddress = createSelector(
+  [selectContact], c =>
+  c ? c.address : null
+);
+
