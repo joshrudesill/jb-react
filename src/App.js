@@ -6,6 +6,7 @@ import { fetchPageStartAsync } from "../src/redux/page/page.actions";
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/homepage.jsx';
 import Contact from './pages/contact.jsx';
+import Footer from "./components/footer/footer";
 
 
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/contacto' element={<Contact/>}/>
           </Routes>
+          <Footer/>
         </div>
     );
   }
