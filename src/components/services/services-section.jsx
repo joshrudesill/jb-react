@@ -8,7 +8,7 @@ import Treatment from "./treatments-subsection";
 
 const ServicesSection = ({ titles: { title, subtitle }, sections, treatmentTitles, treatments }) => (
   <section id="services">
-    <div className="container-xl rounded-3 text-center p-3 mb-5 c1">
+    <div className="container-xl rounded-3 text-center p-3 mb-5 c3l">
       <Wrapper>
         <TextTitle
           extraStyle="display-3"
@@ -35,15 +35,9 @@ const ServicesSection = ({ titles: { title, subtitle }, sections, treatmentTitle
       </div>
       {
         treatments.map(treatment => <Treatment key={treatment.title} {...treatment}/>)
-      }
-      {
-        sections.map(section => <ServiceSubsection {...section} />)
-      }
-      <hr className="d-md-none"/>
-      
-      
-    <hr/>
-      <div class="display-5 text-center m-5 mb-2 p-2 rounded-3 ">
+      }<hr className='mb-2'/>
+      <br/>
+      <div class="display-5 text-center m-5 mb-5 p-2 rounded-3 ">
         <TextTitle
           extraStyle='col-10 col-md-8 mx-auto rounded-pill p-1 eng'
           text='Hair Extensions '
@@ -58,8 +52,16 @@ const ServicesSection = ({ titles: { title, subtitle }, sections, treatmentTitle
           extraStyle='fs-5 text-muted mt-2'
           text='Pricing varies'
           />
-          
       </div>
+      <hr className='mb-5'/>
+      {
+        sections.map(section => <ServiceSubsection {...section} />)
+      }
+      <hr className="d-md-none"/>
+      
+      
+    
+      
     </div>
   </section>
 );

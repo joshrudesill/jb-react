@@ -29,6 +29,7 @@ class App extends React.Component {
   }
 }
 
+
 const mapDispatch = dispatch => ({
   fetchPageStartAsync: lang => dispatch(fetchPageStartAsync(lang))
 });

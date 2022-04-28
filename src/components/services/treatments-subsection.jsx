@@ -1,7 +1,7 @@
 
 const Treatment = ({ desc, title, icon, blurbs }) => (
   <div className="row row-cols-1 mb-2 justify-content-center mx-0">
-    <div className="col col-12 col-md-8 p-2 card me-md-2 m-2 c2 shadow shadow-md">
+    <div className="col col-12 col-md-8 p-2 card me-md-2 m-2 shadow shadow-md" style={{background: 'rgba(230,111,151,0.3)'}}>
       <div className="text-end">
           {
             blurbs.map(blurb => 
