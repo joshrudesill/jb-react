@@ -11,6 +11,9 @@ import TextTitle from "../components/text-title/text-title";
 import Schedule from "../components/contact/schedule";
 import ContactInfo from "../components/contact/contact-info";
 import Address from "../components/contact/address";
+import ContactForm from "../components/contact/contact-form";
+import ContactMap from "../components/contact/contact-map";
+import MissionStatement from "../components/contact/mission-statement";
 
 
 const WrapperWS = WithSpinner(Wrapper);
@@ -36,8 +39,13 @@ class Contact extends React.Component {
 
           <ContactRow rowRules='row row-cols-1 row-cols-lg-2 g-2 mt-1'>
             <Schedule/>
+            <ContactMap/>
           </ContactRow>
 
+          <ContactRow rowRules='row row-cols-1 row-cols-lg-2 g-2 mt-1'>
+            <ContactForm/>
+            <MissionStatement/>
+          </ContactRow>
         </div>
       </WrapperWS>
     );
