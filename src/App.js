@@ -19,9 +19,9 @@ class App extends React.Component {
     return (
         <div>
           <Routes>
-            <Route exact path='/' element={<HomePage/>}/>
-            <Route path='/contact' element={<Contact/>}/>
-            <Route path='/contacto' element={<Contact/>}/>
+            <Route exact path='/' element={ <HomePage/> }/>
+            <Route path='/contact' element={ <Contact/> }/>
+            <Route path='/contacto' element={ <Contact/> }/>
           </Routes>
           <Footer/>
         </div>

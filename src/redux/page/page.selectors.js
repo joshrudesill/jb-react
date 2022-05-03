@@ -107,6 +107,11 @@ export const selectTreatments = createSelector(
   t ? t.names : null
 );
 
+export const selectExtensions = createSelector(
+  [selectServiceTreatments], t =>
+  t ? t.extensions : null
+);
+
 // Contact Page
 
 export const selectContact = createSelector(

@@ -18,7 +18,7 @@ const ProductCards = ({ cardTitle, cards }) => (
       ))}
     </div>
     <TextTitle text={cardTitle.bottomtitle} extraStyle="mt-5 display-5" />
-    <CustomButton classes="btn btn-outline-primary mt-2 mb-2 btn-lg">
+    <CustomButton classes="btn btn-outline-primary mt-2 mb-2 btn-lg" to={'contact'}>
       {cardTitle.button}
     </CustomButton>
     <hr />

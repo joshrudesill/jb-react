@@ -9,7 +9,7 @@ const LargeNavBar = ({ pageData, page }) => (
     <nav className="navbar navbar-light navbar-expand-sm c2">
            <NavBarList titles={page === 'home' ? [pageData[0], pageData[1]] : [pageData[2], pageData[1]]}>
                 <ImageLink 
-                    href={'/'} 
+                    to={'/'} 
                     classString={'navbar-brand p-1'} 
                     imgId={'logo'}
                     src={'assets/Asset18.png'}
