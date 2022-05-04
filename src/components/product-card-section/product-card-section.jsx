@@ -12,7 +12,7 @@ import CustomButton from "../custom-button/custom-button";
 const ProductCards = ({ cardTitle, cards }) => (
   <div className="container-xl text-center my-5">
     <CardTitleText cardTitle={cardTitle} />
-    <div className="row text-start row-cols-1 row-cols-sm-2 row-cols-md-4 g-1">
+    <div className="row text-start row-cols-1 row-cols-sm-2 row-cols-lg-4 g-1">
       {cards.map((card) => (
         <ProductCard {...card} key={card.title} />
       ))}

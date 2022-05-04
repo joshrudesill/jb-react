@@ -136,3 +136,13 @@ export const selectAddress = createSelector(
   c ? c.address : null
 );
 
+export const selectContactForm = createSelector(
+  [selectContact], c =>
+  c ? c.contactform : null
+);
+
+export const selectMissionStatement = createSelector(
+  [selectContact], c =>
+  c ? c.missionstatement : null
+);
+
