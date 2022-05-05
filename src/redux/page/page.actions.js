@@ -42,7 +42,6 @@ export const fetchPageStartAsync = lang => {
         dispatch(fetchPageStart);
         collectionRef.get().then(snapshot => {
             dispatch(fetchPageSuccess(snapshot.docs[0].data()));
-            dispatch(languageChange(lang));
         }).catch(error => dispatch(fetchPageFailure(error)));
     }
 }

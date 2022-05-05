@@ -17,7 +17,6 @@ const LargeNavBar = ({ pageData, page }) => (
                     extraStyle={{maxWidth: '180px'}}
                 />
             </NavBarList >
-        
     </nav>
 );
 

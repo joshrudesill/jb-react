@@ -38,12 +38,12 @@ const ServicesSection = ({ titles: { title, subtitle }, sections, treatmentTitle
       }
       <hr className='mb-2'/>
       <br/>
-      <div class="display-5 text-center m-5 mb-5 p-2 rounded-3 ">
+      <div className="display-5 text-center m-5 mb-5 p-2 rounded-3 ">
         <TextTitle
           extraStyle='col-10 col-md-8 mx-auto rounded-pill p-1 eng'
           text={extensions.title + ' '}
           >
-            <i class="bi bi-rainbow" style={{color: 'red'}}></i>
+            <i className="bi bi-rainbow" style={{color: 'red'}}></i>
         </TextTitle>
         <TextTitle 
           extraStyle='fs-3 text-muted'
@@ -56,7 +56,7 @@ const ServicesSection = ({ titles: { title, subtitle }, sections, treatmentTitle
       </div>
       <hr className='mb-5'/>
       {
-        sections.map(section => <ServiceSubsection {...section} />)
+        sections.map(section => <ServiceSubsection {...section} key={section.title} />)
       }
       <hr className="d-md-none"/>
       

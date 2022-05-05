@@ -23,6 +23,12 @@ const NavBarList = ({ titles, children }) => (
                 <NavBarListItem href={titles[1]} title={titles[1]} start={false}/>
             </Link>
         </ul> 
+        <ul>
+            <Link to='/contact'>
+                <div className='fs-3 pt-2 text-secondary d-sm-none'>{titles[1]}</div>
+            </Link>
+            
+        </ul>
     </div>
     
 );

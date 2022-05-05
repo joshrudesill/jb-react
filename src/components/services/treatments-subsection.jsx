@@ -4,8 +4,8 @@ const Treatment = ({ desc, title, icon, blurbs }) => (
     <div className="col col-12 col-md-8 p-2 card me-md-2 m-2 shadow shadow-md" style={{background: 'rgba(230,111,151,0.3)'}}>
       <div className="text-end">
           {
-            blurbs.map(blurb => 
-              <div 
+            blurbs.map((blurb,i) => 
+              <div key={i}
                 className="ms-1 p-1 text-muted d-inline rounded bg-warning shadow shadow-sm"
               >{blurb}</div>
               )
