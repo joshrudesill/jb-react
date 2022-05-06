@@ -10,6 +10,7 @@ This site was first built using plain html and css and bootstrap to figure out t
 ### Future plans
 - Deploy site if business owner wants it
 - Build content management system so business owner can make changes to site data
+- Add form submission portal so business owner has an organized way to see if someone has used the contact form and respond
 
 ## Technologies used:
 - React.js
